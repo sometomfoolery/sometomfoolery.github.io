@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0, j = 0; i < new_sentence.length; i++)
     {
         const letterSpan = title.querySelector(`span#span${i}`);
-        console.log(letterSpan);
-        if (letterSpan == ' ') continue;
+        console.log(letterSpan.innerHTML);
+        if (letterSpan.innerHTML == ' ') continue;
         letterSpan.style.color = colors[j];
         j++;
         j %= num_cols;
