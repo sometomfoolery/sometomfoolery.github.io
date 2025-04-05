@@ -20,6 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const colors = ['#FF0000', '#FFFF00', '#00FF00', '#00FFFF', '#0000FF', '#FF00FF'];
 
     // Loop thru each letter, giving it a color from the list
+    for (let i = 0; i < new_sentence.length; i++)
+    {
+        
+    }
 
     // Test: change 5th letter to red
     const testspan = title.querySelector('span#span5');
