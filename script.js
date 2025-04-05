@@ -86,9 +86,23 @@ document.addEventListener('DOMContentLoaded', () => {
         return colors;
     }
 
-    function to_hex_string(r, g, b)
+    function to_hex_string(red, green, blue)
     {
-        return r.toString(16) + g.toString(16) + b.toString(16);
+        let r = to_hex_value(red);
+        let g = to_hex_value(green);
+        let b = to_hex_value(blue);
+
+        return r + g + b;
+    }
+
+    function to_hex_value(number)
+    {
+        let num_string = number.toString(16);
+        if (num_string.length == 1)
+        {
+            num_string = "0" + num_string;
+        }
+        return num_string;
     }
 
 });
