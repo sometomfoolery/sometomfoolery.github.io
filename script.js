@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Red to green
         while(red > 0)
         {
-            colors.push();
+            colors.push(to_hex_string(red, green, blue));
         }
 
         // Green to blue
@@ -57,6 +57,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         return colors;
+    }
+
+    function to_hex_string(r, g, b)
+    {
+        return r.toString(16) + g.toString(16) + b.toString(16);
     }
 
 });
