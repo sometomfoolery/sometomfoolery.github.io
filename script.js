@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Wrap each letter in its own <span> tag
     console.log(title.innerHTML);
-    const sentence = title.innerHTML;
+    const sentence = title.innerHTML.trim();
     let new_sentence = "";
     for (let i = 0; i < sentence.length; i++)
     {
