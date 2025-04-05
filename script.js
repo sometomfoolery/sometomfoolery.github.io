@@ -37,4 +37,15 @@ document.addEventListener('DOMContentLoaded', () => {
         j %= num_cols;
     }
 
+    function generate_color_list()
+    {
+        let red = 0xFF, green = 0x00, blue = 0x00;
+        
+        // Red to green
+
+        // Green to blue
+        
+        // Blue to red
+    }
+
 });
