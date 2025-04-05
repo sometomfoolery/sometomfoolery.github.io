@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const title = document.getElementById('title');
 
     // Wrap each letter in its own <span> tag
-    console.log(title.innerHTML);
     const sentence = title.innerHTML.trim();
     let new_sentence = "";
     for (let i = 0; i < sentence.length; i++)
@@ -13,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
         new_sentence += "</span>";
     }
     title.innerHTML = new_sentence;
-    console.log(title.innerHTML);
 
     // -- Give each letter a different color
     // Genereate a list of colors
