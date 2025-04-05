@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Loop thru each letter, giving it a color from the list
     for (let i = 0, j = 0; i < new_sentence.length; i++)
     {
-        const letter = title.querySelector(`span#span${i}`);
-        console.log(letter);
-        if (letter == ' ') continue;
-        letter.style.color = colors[j];
+        const letterSpan = title.querySelector(`span#span${i}`);
+        console.log(letterSpan);
+        if (letterSpan == ' ') continue;
+        letterSpan.style.color = colors[j];
         j++;
         j %= num_cols;
         console.log(i + ' ' + j);
