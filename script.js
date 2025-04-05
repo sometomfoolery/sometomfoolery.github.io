@@ -44,17 +44,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const delta = 0x80;
 
-
         // Red to green
-        while(red > 0)
+        while (red > 0)
         {
             colors.push(to_hex_string(red, green, blue));
+
+            red -= delta;
+            red = Math.max(red, 0);
+            green = 0xFF - red;
         }
 
         // Green to blue
+        while (green > 0)
+        {
+            colors.push(to_hex_string(red, green, blue));
+
+            green -= delta;
+            green = Math.max(green, 0);
+            blue = 0xFF - green;
+        }
         
         // Blue to red
+        while (blue > 0)
+        {
+            colors.push(to_hex_string(red, green, blue));
 
+            blue -= delta;
+            blue = Math.max(blue, 0);
+            red = 0xFF - blue; 
+        }
 
         return colors;
     }
