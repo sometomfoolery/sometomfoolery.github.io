@@ -23,8 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
     {
         const letterSpan = title.querySelector(`span#span${i}`);
         console.log(letterSpan.innerHTML);
+
+        //Early return in case of space
         if (letterSpan.innerHTML == ' ') continue;
+
+        // Color letter if not a space
         letterSpan.style.color = colors[j];
+
+        // Increment color index variable (j)
         j++;
         j %= num_cols;
         console.log(i + ' ' + j);
