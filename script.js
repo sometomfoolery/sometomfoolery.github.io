@@ -24,10 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0, j = 0; i < new_sentence.length; i++)
     {
         const letter = title.querySelector(`span#span${j}`);
+        console.log(letter);
         if (letter == ' ') continue;
         letter.style.color = colors[j];
         j++;
         j %= num_cols;
+        console.log(i + ' ' + j);
     }
 
 });
