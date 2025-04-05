@@ -37,6 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
         j %= num_cols;
     }
 
+    const colors2 = generate_color_list();
+    console.log(colors2);
+
     /*
     *
     * Helper Functions
