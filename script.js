@@ -7,13 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let new_sentence = "";
     for (let i = 0; i < sentence.length; i++)
     {
-        new_sentence += `<p id=\"p${i}\">`
+        new_sentence += `<p id=\"p${i}\" style="inline">`
         new_sentence += sentence[i];
         new_sentence += "</p>"
     }
     title.innerHTML = new_sentence;
 
-    const p5 = title.getElementById('p5');
+    const p5 = title.querySelector('p#p5');
     p5.style = 'color: red;';
 
 });
