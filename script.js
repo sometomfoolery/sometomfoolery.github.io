@@ -18,11 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // -- Give each letter a different color
     // Genereate a list of colors
     const colors = ['#FF0000', '#FFFF00', '#00FF00', '#00FFFF', '#0000FF', '#FF00FF'];
+    const num_cols = colors.length;
 
     // Loop thru each letter, giving it a color from the list
     for (let i = 0, j = 0; i < new_sentence.length; i++)
     {
-        let num_cols = colors.length;
         const letter = title.querySelector(`span#span${j}`);
         if (letter == ' ') continue;
         letter.style.color = colors[j];
