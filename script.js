@@ -39,13 +39,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function generate_color_list()
     {
+        let colors = [];
         let red = 0xFF, green = 0x00, blue = 0x00;
-        
+
+        const delta = 0x80;
+
+
         // Red to green
+        while(red > 0)
+        {
+            colors.push();
+        }
 
         // Green to blue
         
         // Blue to red
+
+
+        return colors;
     }
 
 });
