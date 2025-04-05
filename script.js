@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let new_sentence = "";
     for (let i = 0; i < sentence.length; i++)
     {
-        new_sentence += `<span id=\"span${i}\" style="inline">`;
+        new_sentence += `<span id=\"span${i}\" style="inline;">`;
         new_sentence += sentence[i];
         new_sentence += "</span>";
     }
@@ -23,6 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Test: change 5th letter to red
     const testspan = title.querySelector('span#span5');
-    testspan.style += 'color: red;';
+    testspan.style = testspan.style + ' color: red;';
 
 });
