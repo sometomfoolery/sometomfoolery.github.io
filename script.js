@@ -27,6 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Test: change 5th letter to red
     const testspan = title.querySelector('span#span5');
-    testspan.style.add(' color: red;');
+    testspan.style.color = 'red';
 
 });
