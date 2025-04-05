@@ -37,6 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
         j %= num_cols;
     }
 
+    /*
+    *
+    * Helper Functions
+    * 
+    */
+
     function generate_color_list()
     {
         let colors = [];
