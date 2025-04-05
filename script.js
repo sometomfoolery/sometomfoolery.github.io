@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let num_cols = colors.length;
         const letter = title.querySelector(`span#span${j}`);
         if (letter == ' ') continue;
-        testspan.style.color = colors[j];
+        letter.style.color = colors[j];
         j++;
         j %= num_cols;
     }
