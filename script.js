@@ -30,8 +30,4 @@ document.addEventListener('DOMContentLoaded', () => {
         j %= num_cols;
     }
 
-    // Test: change 5th letter to red
-    const testspan = title.querySelector('span#span5');
-    testspan.style.color = 'red';
-
 });
