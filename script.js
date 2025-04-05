@@ -5,13 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Wrap each letter in its own <span> tag
     const sentence = title.innerHTML.trim();
     let new_sentence = "";
+    let length_counter = 0;
     for (let i = 0; i < sentence.length; i++)
     {
         new_sentence += `<span id=\"span${i}\">`;
         new_sentence += sentence[i];
         new_sentence += "</span>";
+        length_counter++;
     }
     title.innerHTML = new_sentence;
+    const sentence_length = length_counter;
 
     // -- Give each letter a different color
     // Genereate a list of colors
@@ -19,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const num_cols = colors.length;
 
     // Loop thru each letter, giving it a color from the list
-    for (let i = 0, j = 0; i < new_sentence.length; i++)
+    for (let i = 0, j = 0; i < sentence_length; i++)
     {
         console.log(`Starting loop with i: ${i}, j: ${j}`);
 
