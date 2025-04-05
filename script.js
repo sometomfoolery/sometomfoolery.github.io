@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // -- Give each letter a different color
     // Genereate a list of colors
-    const colors = ['#FF0000', '#FFFF00', '#00FF00', '#00FFFF', '#0000FF', '#FF00FF'];
+    const colors = generate_color_list();
     const num_cols = colors.length;
 
     // Loop thru each letter, giving it a color from the list
@@ -36,9 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
         j++;
         j %= num_cols;
     }
-
-    const colors2 = generate_color_list();
-    console.log(colors2);
 
     /*
     *
