@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let g = to_hex_value(green);
         let b = to_hex_value(blue);
 
-        return r + g + b;
+        return '#' + r + g + b;
     }
 
     function to_hex_value(number)
