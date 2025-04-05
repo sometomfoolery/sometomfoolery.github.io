@@ -22,11 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Loop thru each letter, giving it a color from the list
     for (let i = 0; i < new_sentence.length; i++)
     {
-        
+
     }
 
     // Test: change 5th letter to red
     const testspan = title.querySelector('span#span5');
-    testspan.style = testspan.style + ' color: red;';
+    testspan.style.add(' color: red;');
 
 });
