@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     title.innerHTML = new_sentence;
 
+    // Test: change 5th letter to red
     const span5 = title.querySelector('span#span5');
     span5.style += 'color: red;';
 
