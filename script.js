@@ -24,10 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Loop thru each letter, giving it a color from the list
     for (let i = 0, j = 0; i < sentence_length; i++)
     {
-        console.log(`Starting loop with i: ${i}, j: ${j}`);
-
         const letterSpan = title.querySelector(`span#span${i}`);
-        console.log(letterSpan.innerHTML);
 
         //Early return in case of space
         if (letterSpan.innerHTML == ' ') continue;
@@ -38,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Increment color index variable (j)
         j++;
         j %= num_cols;
-        console.log(`Incremented j to ${j}`);
     }
 
 });
