@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // -- Give each letter a different color
     // Genereate a list of colors
+    const colors = ['#FF0000', '#FFFF00', '#00FF00', '#00FFFF', '#0000FF', '#FF00FF'];
 
     // Loop thru each letter, giving it a color from the list
 
