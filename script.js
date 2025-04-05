@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Loop thru each letter, giving it a color from the list
 
     // Test: change 5th letter to red
-    const span5 = title.querySelector('span#span5');
-    span5.style += 'color: red;';
+    const testspan = title.querySelector('span#span5');
+    testspan.style += 'color: red;';
 
 });
