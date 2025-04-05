@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const title = document.getElementById('title');
 
-    // Wrap each letter in its own <p> tag
+    // Wrap each letter in its own <span> tag
     const sentence = title.innerHTML;
     let new_sentence = "";
     for (let i = 0; i < sentence.length; i++)
