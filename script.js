@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let new_sentence = "";
     for (let i = 0; i < sentence.length; i++)
     {
-        new_sentence += `<span id=\"span${i}\" style="inline;">`;
+        new_sentence += `<span id=\"span${i}\">`;
         new_sentence += sentence[i];
         new_sentence += "</span>";
     }
