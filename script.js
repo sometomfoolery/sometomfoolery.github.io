@@ -57,6 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
     * 
     */
 
+    // TODO: This color list has values that ALWAYS add up to FF
+    // Instead, one should be at FF, while the other counts up to FF,
+    // Then when the second reached FF, the first should count down
+    // to 00, then the third should count up to FF, etc.
     function generate_color_list()
     {
         let colors = [];
