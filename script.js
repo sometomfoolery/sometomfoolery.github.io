@@ -2,6 +2,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const title = document.getElementById('title');
 
+    // TODO: Move spann wrapping into a span_wrapped_content object
+    // I don't want to use objects everwhwere, but this seems an appropriate place
+    class span_wrapped_content
+    {
+        constructor(unwrapped_content)
+        {
+            this.content = span_wrapped_content.span_wrap(unwrapped_content);
+            this.length = 0;
+        }
+
+        static span_wrap(unwrapped_content)
+        {
+            return unwrapped_content;
+        }
+    }
+
     // Wrap each letter in its own <span> tag
     const content = title.innerHTML.trim();
     let new_content = "";
