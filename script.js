@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 {
                     goingUp = false;
                     deltaColor -= 1;
-                    deltaColor %= 3;
+                    deltaColor = modulo(deltaColor,  3);
                     console.log(`Changed down: ${deltaColor}`);
                 }
             }
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 {
                     goingUp = true;
                     deltaColor += 2;
-                    deltaColor %= 3;
+                    deltaColor = modulo(deltaColor,  3);
                     console.log(`Changed up: ${deltaColor}`);
                 }
             }
