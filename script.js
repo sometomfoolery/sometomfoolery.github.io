@@ -29,9 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     apply_colors(title, span_title.length, colors);
     
-    function apply_colors(element, length, color_list)
+    function apply_colors(element, length, color_list, offset = 0)
     {
-        for (let i = 0, j = 0; i < length; i++)
+        for (let i = 0, j = offset; i < length; i++)
         {
             const characterSpan = element.querySelector(`span#span${i}`);
 
@@ -43,8 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    let color_offset = 0;
     setInterval(() => {
-        
+        apply_colors(title, span_title.length, colors, color_offset);
+        color_offset++;
+        color_offset %= colors.length;
     }, 1000);
 
     /*
