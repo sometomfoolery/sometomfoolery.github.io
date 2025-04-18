@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (characterSpan.innerHTML == ' ') continue;
 
-            letterSpan.style.color = color_list[j];
+            characterSpan.style.color = color_list[j];
             j++;
             j %= color_list;
         }
