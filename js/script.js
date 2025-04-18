@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     apply_colors(title, span_title.length, colors);
 
     let color_offset = 0;
-    let color_change_ms = 25;
+    let color_change_ms = 20;
     setInterval(() => {
         apply_colors(title, span_title.length, colors, color_offset);
         color_offset++;
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let color = [0xFF, 0x00, 0x00];
         let colors = [];
         
-        const delta = 0x01;
+        const delta = 0x02;
 
         do
         {
