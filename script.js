@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     
+    /*
+    *
+    * CLASSES
+    * 
+    */
+
     class span_wrapped_content
     {
         constructor(element)
@@ -22,6 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    /*
+    *
+    *
+    * CODE
+    * 
+    */
+
     const title = document.getElementById('title');
     const span_title = new span_wrapped_content(title);
 
@@ -30,20 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const colors = generate_color_list();
 
     apply_colors(title, span_title.length, colors);
-    
-    function apply_colors(element, length, color_list, offset = 0)
-    {
-        for (let i = 0, j = offset; i < length; i++)
-        {
-            const characterSpan = element.querySelector(`span#span${i}`);
-
-            if (characterSpan.innerHTML == ' ') continue;
-
-            characterSpan.style.color = color_list[j];
-            j++;
-            j %= color_list.length;
-        }
-    }
 
     let color_offset = 0;
     let color_change_ms = 1000;
@@ -58,6 +57,20 @@ document.addEventListener('DOMContentLoaded', () => {
     * Helper Functions
     * 
     */
+    
+    function apply_colors(element, length, color_list, offset = 0)
+    {
+        for (let i = 0, j = offset; i < length; i++)
+        {
+            const characterSpan = element.querySelector(`span#span${i}`);
+
+            if (characterSpan.innerHTML == ' ') continue;
+
+            characterSpan.style.color = color_list[j];
+            j++;
+            j %= color_list.length;
+        }
+    }
 
     function generate_color_list()
     {
