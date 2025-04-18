@@ -86,8 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (goingUp)
             {
-                color[deltaColor] += delta;
-                color[deltaColor] = Math.min(color[deltaColor], 0xFF);
+                color[deltaColor] = Math.min(color[deltaColor] + delta, 0xFF);
+
                 if (color[deltaColor] == 0xFF)
                 {
                     goingUp = false;
@@ -97,8 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             else
             {
-                color[deltaColor] -= delta;
-                color[deltaColor] = Math.max(color[deltaColor], 0x00);
+                color[deltaColor] = Math.max(color[deltaColor] - delta, 0xFF);
+
                 if (color[deltaColor] == 0x00)
                 {
                     goingUp = true;
