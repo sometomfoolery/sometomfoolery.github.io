@@ -44,11 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     let color_offset = 0;
+    let color_change_ms = 1000;
     setInterval(() => {
         apply_colors(title, span_title.length, colors, color_offset);
         color_offset++;
         color_offset %= colors.length;
-    }, 1000);
+    }, color_change_ms);
 
     /*
     *
