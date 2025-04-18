@@ -8,13 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
     {
         constructor(unwrapped_content)
         {
-            this.content = span_wrapped_content.span_wrap(unwrapped_content);
-            this.length = 0;
+            this.length = unwrapped_content.length;
+            this.content = this.span_wrap(unwrapped_content);
         }
 
-        static span_wrap(unwrapped_content)
+        span_wrap(content)
         {
-            return unwrapped_content;
+            let wrapped_content = ""
+            for (let i = 0; i < content.length; i++)
+            {
+                wrapped_content = `<span id=\"span${i}\">${content[i]}</span>`;
+            }
+            return content;
         }
     }
 
