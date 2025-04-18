@@ -110,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
+            // Break out of loop early (remove once the loop exits correctly)
             if (colors.length == 20) break;
         }
         while (to_hex_string(color) != colors[0])
@@ -134,6 +135,12 @@ document.addEventListener('DOMContentLoaded', () => {
             num_string = "0" + num_string;
         }
         return num_string;
+    }
+
+    // The remainder operator (%) does not work with negative numbers, this fixes that
+    function modulo(value, base)
+    {
+        return ((value % base) + base) % base;
     }
 
 });
