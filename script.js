@@ -1,9 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    const title = document.getElementById('title');
-    const span_title = new span_wrapped_content(title.innerHTML.trim());
-    title.innerHTML = span_title.content;
-
+    
     class span_wrapped_content
     {
         constructor(unwrapped_content)
@@ -22,6 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
             return content;
         }
     }
+
+    const title = document.getElementById('title');
+    const span_title = new span_wrapped_content(title.innerHTML.trim());
+    title.innerHTML = span_title.content;
 
     // Give each letter a different color
     // Genereate a list of colors
