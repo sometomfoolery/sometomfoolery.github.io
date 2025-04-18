@@ -56,10 +56,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // to 00, then the third should count up to FF, etc.
     function generate_color_list()
     {
+        /*
+        *
+        *   FF 00 00 - FF 40 00 - FF 80 00 - FF C0 00
+        *   FF FF 00 - C0 FF 00 - 80 FF 00 - 40 FF 00
+        *   00 FF 00 - 00 FF 40 - 00 FF 80 - 00 FF C0
+        *   00 FF FF - 00 C0 FF - 00 80 FF - 00 40 FF
+        *   00 00 FF - 40 00 FF - 80 00 FF - C0 00 FF
+        *   FF 00 FF - FF 00 C0 - FF 00 80 - FF 00 40
+        * 
+        */
+
         let colors = [];
         let red = 0xFF, green = 0x00, blue = 0x00;
 
-        const delta = 0x80;
+        const delta = 0x40;
 
         // Red to green
         while (red > 0)
