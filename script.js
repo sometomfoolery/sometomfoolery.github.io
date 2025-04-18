@@ -77,6 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let goingUp = true;
         let color = [0xFF, 0x00, 0x00];
         let colors = [];
+
+        console.log(colors.length);
         
         const delta = 0xFF;
 
