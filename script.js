@@ -50,30 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
     * 
     */
 
-    // TODO: This color list has values that ALWAYS add up to FF
-    // Instead, one should be at FF, while the other counts up to FF,
-    // Then when the second reached FF, the first should count down
-    // to 00, then the third should count up to FF, etc.
     function generate_color_list()
     {
-        /*
-        *
-        *   FF 00 00 - FF 40 00 - FF 80 00 - FF C0 00
-        *   FF FF 00 - C0 FF 00 - 80 FF 00 - 40 FF 00
-        *   00 FF 00 - 00 FF 40 - 00 FF 80 - 00 FF C0
-        *   00 FF FF - 00 C0 FF - 00 80 FF - 00 40 FF
-        *   00 00 FF - 40 00 FF - 80 00 FF - C0 00 FF
-        *   FF 00 FF - FF 00 C0 - FF 00 80 - FF 00 40
-        * 
-        */
-
-        const Color = {
-            RED: 0,
-            GREEN: 1,
-            BLUE: 2
-        };
-
-        let deltaColor = Color.GREEN;
+        // 0 is red, 1 is green, 2 is blue
+        let deltaColor = 1;
         let goingUp = true;
         let color = [0xFF, 0x00, 0x00];
         let colors = [];
@@ -83,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
         do
         {
             colors.push(to_hex_string(color));
-            console.log(to_hex_string(color));
 
             if (goingUp)
             {
@@ -94,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     goingUp = false;
                     deltaColor -= 1;
                     deltaColor = modulo(deltaColor,  3);
-                    console.log(`Changed down: ${deltaColor}`);
                 }
             }
             else
@@ -106,12 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     goingUp = true;
                     deltaColor += 2;
                     deltaColor = modulo(deltaColor,  3);
-                    console.log(`Changed up: ${deltaColor}`);
                 }
             }
-
-            // Break out of loop early (remove once the loop exits correctly)
-            if (colors.length == 20) break;
         }
         while (to_hex_string(color) != colors[0])
 
