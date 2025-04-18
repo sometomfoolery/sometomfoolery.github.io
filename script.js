@@ -26,23 +26,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Give each letter a different color
     // Genereate a list of colors
     const colors = generate_color_list();
-    const num_cols = colors.length;
 
-    // Loop thru each letter, giving it a color from the list
-    for (let i = 0, j = 0; i < span_title.length; i++)
+    apply_colors(title, span_title.length, colors);
+    
+    function apply_colors(element, length, color_list)
     {
-        const letterSpan = title.querySelector(`span#span${i}`);
+        for (let i = 0, j = 0; i < length; i++)
+        {
+            const characterSpan = element.querySelector(`span#span${i}`);
 
-        //Early return in case of space
-        if (letterSpan.innerHTML == ' ') continue;
+            if (characterSpan.innerHTML == ' ') continue;
 
-        // Color letter if not a space
-        letterSpan.style.color = colors[j];
-
-        // Increment color index variable (j)
-        j++;
-        j %= num_cols;
+            letterSpan.style.color = color_list[j];
+            j++;
+            j %= color_list;
+        }
     }
+
+    setInterval(() => {
+        
+    }, 1000);
 
     /*
     *
