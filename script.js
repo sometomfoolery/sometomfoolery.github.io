@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const span_title = new span_wrapped_content(title.innerHTML.trim());
     title.innerHTML = span_title.content;
 
-    // TODO: Move spann wrapping into a span_wrapped_content object
-    // I don't want to use objects everwhwere, but this seems an appropriate place
     class span_wrapped_content
     {
         constructor(unwrapped_content)
