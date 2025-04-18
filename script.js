@@ -33,17 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function apply_colors(element, length, color_list, offset = 0)
     {
-        console.log(`Called apply_colors with element ${element}, length ${length}, and offset ${offset}`);
         for (let i = 0, j = offset; i < length; i++)
         {
-            console.log(`Execute for loop with i ${i} and j ${j}`);
             const characterSpan = element.querySelector(`span#span${i}`);
 
             if (characterSpan.innerHTML == ' ') continue;
 
             characterSpan.style.color = color_list[j];
             j++;
-            j %= color_list;
+            j %= color_list.length;
         }
     }
 
