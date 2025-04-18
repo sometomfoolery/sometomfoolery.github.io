@@ -83,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         do
         {
             colors.push(to_hex_string(color));
+            console.log(to_hex_string(color));
 
             if (goingUp)
             {
