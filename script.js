@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let color = [0xFF, 0x00, 0x00];
         let colors = [];
         
-        const delta = 0xFF;
+        const delta = 0x80;
 
         do
         {
