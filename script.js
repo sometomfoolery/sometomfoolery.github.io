@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function apply_colors(element, length, color_list, offset = 0)
     {
+        console.log(`Called apply_colors with element ${element}, length ${length}, and offset ${offset}`);
         for (let i = 0, j = offset; i < length; i++)
         {
             const characterSpan = element.querySelector(`span#span${i}`);
