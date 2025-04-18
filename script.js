@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             {
                 wrapped_content = `<span id=\"span${i}\">${content[i]}</span>`;
             }
-            return content;
+            return wrapped_content;
         }
     }
 
