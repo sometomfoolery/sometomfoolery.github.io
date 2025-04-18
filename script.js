@@ -67,15 +67,51 @@ document.addEventListener('DOMContentLoaded', () => {
         * 
         */
 
-        let colors = [];
-        let red = 0xFF, green = 0x00, blue = 0x00;
+        const Color = {
+            RED: 0,
+            GREEN: 1,
+            BLUE: 2
+        };
 
-        const delta = 0x40;
+        let deltaColor = Color.GREEN;
+        let goingUp = true;
+        let color = [0xFF, 0x00, 0x00];
+        let colors = [];
+        
+        const delta = 0xFF;
+
+        do
+        {
+            colors.push(to_hex_string(color[0], color[1], color[2]));
+
+            if (goingUp)
+            {
+                color[deltaColor] += delta;
+                color[deltaColor] = Math.min(color[deltaColor], 0xFF);
+                if (color[deltaColor] == 0xFF)
+                {
+                    goingUp = false;
+                }
+            }
+            else
+            {
+                color[deltaColor] -= delta;
+                color[deltaColor] = Math.max(color[deltaColor], 0x00);
+                if (color[deltaColor] == 0x00)
+                {
+                    goingUp = true;
+                }
+            }
+        }
+        while (to_hex_string(color[0], color[1], color[2]) != colors[0])
+
+        let colors_result = [];
+        let red = 0xFF, green = 0x00, blue = 0x00;
 
         // Red to green
         while (red > 0)
         {
-            colors.push(to_hex_string(red, green, blue));
+            colors_result.push(to_hex_string(red, green, blue));
 
             red -= delta;
             red = Math.max(red, 0);
@@ -85,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Green to blue
         while (green > 0)
         {
-            colors.push(to_hex_string(red, green, blue));
+            colors_result.push(to_hex_string(red, green, blue));
 
             green -= delta;
             green = Math.max(green, 0);
@@ -95,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Blue to red
         while (blue > 0)
         {
-            colors.push(to_hex_string(red, green, blue));
+            colors_result.push(to_hex_string(red, green, blue));
 
             blue -= delta;
             blue = Math.max(blue, 0);
