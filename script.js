@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let wrapped_content = ""
             for (let i = 0; i < content.length; i++)
             {
-                wrapped_content = `<span id=\"span${i}\">${content[i]}</span>`;
+                wrapped_content += `<span id=\"span${i}\">${content[i]}</span>`;
             }
             return wrapped_content;
         }
