@@ -77,8 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
         let goingUp = true;
         let color = [0xFF, 0x00, 0x00];
         let colors = [];
-
-        console.log(colors.length);
         
         const delta = 0xFF;
 
@@ -96,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     goingUp = false;
                     deltaColor -= 1;
                     deltaColor %= 3;
+                    console.log(`Changed down: ${deltaColor}`);
                 }
             }
             else
@@ -107,8 +106,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     goingUp = true;
                     deltaColor += 2;
                     deltaColor %= 3;
+                    console.log(`Changed up: ${deltaColor}`);
                 }
             }
+
+            if (colors.length == 20) break;
         }
         while (to_hex_string(color) != colors[0])
 
