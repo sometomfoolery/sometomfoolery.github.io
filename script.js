@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             else
             {
-                color[deltaColor] = Math.max(color[deltaColor] - delta, 0xFF);
+                color[deltaColor] = Math.max(color[deltaColor] - delta, 0x00);
 
                 if (color[deltaColor] == 0x00)
                 {
