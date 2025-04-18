@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const title = document.getElementById('title');
+    const span_title = new span_wrapped_content(title.innerHTML.trim());
+    title.innerHTML = span_title.content;
 
     // TODO: Move spann wrapping into a span_wrapped_content object
     // I don't want to use objects everwhwere, but this seems an appropriate place
@@ -23,25 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Wrap each letter in its own <span> tag
-    const content = title.innerHTML.trim();
-    let new_content = "";
-    let content_length = 0;
-    for (let i = 0; i < content.length; i++)
-    {
-        new_content += `<span id=\"span${i}\">${content[i]}</span>`;
-        content_length++;
-    }
-    title.innerHTML = new_content;
-    const sentence_length = content_length;
-
     // Give each letter a different color
     // Genereate a list of colors
     const colors = generate_color_list();
     const num_cols = colors.length;
 
     // Loop thru each letter, giving it a color from the list
-    for (let i = 0, j = 0; i < sentence_length; i++)
+    for (let i = 0, j = 0; i < span_title.length; i++)
     {
         const letterSpan = title.querySelector(`span#span${i}`);
 
