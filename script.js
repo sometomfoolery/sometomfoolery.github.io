@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         do
         {
-            colors.push(to_hex_string(color[0], color[1], color[2]));
+            colors.push(to_hex_string(color));
 
             if (goingUp)
             {
@@ -91,6 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (color[deltaColor] == 0xFF)
                 {
                     goingUp = false;
+                    deltaColor -= 1;
+                    deltaColor %= 3;
                 }
             }
             else
@@ -100,52 +102,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (color[deltaColor] == 0x00)
                 {
                     goingUp = true;
+                    deltaColor += 2;
+                    deltaColor %= 3;
                 }
             }
         }
-        while (to_hex_string(color[0], color[1], color[2]) != colors[0])
-
-        let colors_result = [];
-        let red = 0xFF, green = 0x00, blue = 0x00;
-
-        // Red to green
-        while (red > 0)
-        {
-            colors_result.push(to_hex_string(red, green, blue));
-
-            red -= delta;
-            red = Math.max(red, 0);
-            green = 0xFF - red;
-        }
-
-        // Green to blue
-        while (green > 0)
-        {
-            colors_result.push(to_hex_string(red, green, blue));
-
-            green -= delta;
-            green = Math.max(green, 0);
-            blue = 0xFF - green;
-        }
-        
-        // Blue to red
-        while (blue > 0)
-        {
-            colors_result.push(to_hex_string(red, green, blue));
-
-            blue -= delta;
-            blue = Math.max(blue, 0);
-            red = 0xFF - blue; 
-        }
+        while (to_hex_string(color) != colors[0])
 
         return colors;
     }
 
-    function to_hex_string(red, green, blue)
+    function to_hex_string(color_array)
     {
-        let r = to_hex_value(red);
-        let g = to_hex_value(green);
-        let b = to_hex_value(blue);
+        let r = to_hex_value(color_array[0]);
+        let g = to_hex_value(color_array[1]);
+        let b = to_hex_value(color_array[2]);
 
         return '#' + r + g + b;
     }
