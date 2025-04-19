@@ -19,3 +19,17 @@ export class span_wrapped_content
         return wrapped_content;
     }
 }
+
+export function apply_colors(element, length, color_list, offset = 0)
+{
+    for (let i = 0, j = offset; i < length; i++)
+    {
+        const characterSpan = element.querySelector(`span#span${i}`);
+
+        if (characterSpan.innerHTML == ' ') continue;
+
+        characterSpan.style.color = color_list[j];
+        j++;
+        j %= color_list.length;
+    }
+}
