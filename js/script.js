@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let color = [0xFF, 0x00, 0x00];
         let colors = [];
         
-        const delta = 0x02;
+        const delta = 0x05;
 
         do
         {
