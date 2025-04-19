@@ -1,4 +1,4 @@
-import { span_wrapped_content } from "./utils";
+import { span_wrapped_content } from "./utils.js";
 
 document.addEventListener('DOMContentLoaded', () => {
 
