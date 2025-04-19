@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     apply_colors(title, span_title.length, colors);
 
     let color_offset = 0;
-    let color_change_ms = 5;
+    let color_change_ms = 10;
     setInterval(() => {
         apply_colors(title, span_title.length, colors, color_offset);
         color_offset++;
